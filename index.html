@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>찌찌리공 뒤집기 계산기</title>
+<title>찌리리공 뒤집기 계산기</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -360,8 +360,8 @@ h1 { font-size: 1.5rem; color: #f0c040; margin-bottom: .25rem; }
 </head>
 <body>
 
-<h1 id="title">찌찌리공 뒤집기 계산기</h1>
-<p class="sub" id="subtitle">각 줄의 합계(위)와 찌찌리공 수(아래)를 입력하고 분석하기를 누르세요</p>
+<h1 id="title">찌리리공 뒤집기 계산기</h1>
+<p class="sub" id="subtitle">각 줄의 합계(위)와 찌리리공 수(아래)를 입력하고 분석하기를 누르세요</p>
 
 <div class="main-layout">
   <!-- 보드 영역 -->
@@ -454,7 +454,7 @@ h1 { font-size: 1.5rem; color: #f0c040; margin-bottom: .25rem; }
     <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
       <iframe 
         style="position:absolute;top:0;left:0;width:100%;height:100%;"
-        src="https://www.youtube.com/embed/yVgP7ekxJM8" 
+        src="https://www.youtube.com/embed/yVgP7ekxJM8?loop=1&playlist=yVgP7ekxJM8" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
@@ -471,20 +471,20 @@ let lang = 'ko';
 
 const T = {
   ko: {
-    title:      '찌찌리공 뒤집기 계산기',
-    subtitle:   '각 줄의 합계(위)와 찌찌리공 수(아래)를 입력하고 분석하기를 누르세요',
+    title:      '찌리리공 뒤집기 계산기',
+    subtitle:   '각 줄의 합계(위)와 찌리리공 수(아래)를 입력하고 분석하기를 누르세요',
     solve:      '🔍 분석하기', reset: '🔄 초기화', langBtn: '🌐 EN',
-    hintLabel:  '합계 / 찌찌리공',
+    hintLabel:  '합계 / 찌리리공',
     evLabel:    (v) => `기댓값 ${v}`,
     modalAsk:   '어떤 값이 나왔나요?',
     modalEdit:  (v) => `현재: ${v} — 수정하려면 선택하세요`,
-    msgVoltorb: '이 칸은 찌찌리공이에요! 뒤집지 마세요.',
-    msgGameOver:'💥 찌찌리공! 게임 오버. 초기화 후 다시 시작하세요.',
+    msgVoltorb: '이 칸은 찌리리공이에요! 뒤집지 마세요.',
+    msgGameOver:'💥 찌리리공! 게임 오버. 초기화 후 다시 시작하세요.',
     msgAllDone: '🎉 모든 칸이 확정됐어요! 축하합니다!',
-    msgClear:   '🏆 게임 클리어! 2와 3을 모두 찾았어요. 남은 칸은 1 또는 찌찌리공이에요.',
-    msgSafe:    (n) => `✅ 찌찌리공 없는 안전 칸 ${n}개 발견! 노란 테두리 칸을 뒤집으세요.`,
+    msgClear:   '🏆 게임 클리어! 2와 3을 모두 찾았어요. 남은 칸은 1 또는 찌리리공이에요.',
+    msgSafe:    (n) => `✅ 찌리리공 없는 안전 칸 ${n}개 발견! 노란 테두리 칸을 뒤집으세요.`,
     msgNoSol:   '⚠️ 유효한 해가 없어요. 힌트를 다시 확인하세요.',
-    msgRisky:   (extra) => `⚠️ 확정 가능한 칸이 없어요. 빨간 테두리 = 찌찌리공 확률 가장 낮은 추천 칸 (${extra} 경우의 수)`,
+    msgRisky:   (extra) => `⚠️ 확정 가능한 칸이 없어요. 빨간 테두리 = 찌리리공 확률 가장 낮은 추천 칸 (${extra} 경우의 수)`,
     extraMany:  (n) => `${n}개 이상`, extraFew: (n) => `${n}가지`,
     // 모드
     btnHow:     '📖 플레이 방법', btnCalc: '🧮 계산기 모드', btnPrac: '🎮 연습 모드', btnSolo: '⚔️ 도전 모드',
@@ -494,9 +494,9 @@ const T = {
     continueBtn:(lv) => `▶ 이어하기 (Lv.${lv})`,
     soloClear:  (from, to) => `🏆 클리어! Lv.${from} → Lv.${to}`,
     soloOver:   (p, lv, kept) => kept
-      ? `💥 찌찌리공! ${p}칸 열었습니다. Lv.${lv} 유지.`
-      : `💥 찌찌리공! ${p}칸 열었으니 Lv.${lv}로 다운됩니다.`,
-    pracOver:   '💥 찌찌리공! 게임 오버. 다시 도전하려면 연습 모드를 다시 선택하세요.',
+      ? `💥 찌리리공! ${p}칸 열었습니다. Lv.${lv} 유지.`
+      : `💥 찌리리공! ${p}칸 열었으니 Lv.${lv}로 다운됩니다.`,
+    pracOver:   '💥 찌리리공! 게임 오버. 다시 도전하려면 연습 모드를 다시 선택하세요.',
     pracClear:  '🏆 클리어! 연습 모드를 다시 선택해 계속 도전하세요.',
     howTitle1: '🎯 즐기는 방법',
     howBody1: '찌리리공 뒤집기는 패널을 뒤집어 숫자를 찾아내는 게임입니다. 패널에는 1~3까지의 숫자와 찌리리공이 숨어있습니다. 1장째에 뒤집은 숫자는 획득 동전에 더해집니다. 2장째부터 뒤집은 숫자는 그때까지 획득한 동전에 그 숫자를 곱하게 됩니다. 2를 뒤집으면 ×2, 3을 뒤집으면 ×3으로 획득 동전이 크게 늘어납니다. 찌리리공 패널을 뒤집으면 게임 오버입니다. 숨어 있는 2와 3을 모두 열면 게임 클리어입니다!',
@@ -511,8 +511,8 @@ const T = {
     coinLabel:  (n) => `💰 누적 코인: ${n}`,
     quitMsg:    (c) => `🚪 그만뒀습니다. ${c}코인 획득!`,
     soloOver:   (p, lv, kept) => kept
-      ? `💥 찌찌리공! ${p}칸 열었습니다. Lv.${lv} 유지.`
-      : `💥 찌찌리공! ${p}칸 열었으니 Lv.${lv}로 다운됩니다. 동전을 잃었습니다.`,
+      ? `💥 찌리리공! ${p}칸 열었습니다. Lv.${lv} 유지.`
+      : `💥 찌리리공! ${p}칸 열었으니 Lv.${lv}로 다운됩니다. 동전을 잃었습니다.`,
   },
   en: {
     title:      'Voltorb Flip Calculator',
