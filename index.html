@@ -408,6 +408,12 @@ h1 { font-size: 1.5rem; color: #f0c040; margin-bottom: .25rem; }
     
     <button class="sb-btn sb-solo" onclick="startMode('solo')"     id="btn-solo">⚔️ 도전 모드</button>
     
+    <!-- 경품 교환 버튼 -->
+    <button class="sb-btn" onclick="openPrizeModal()" 
+            style="background:#3a2a1a;color:#f0c040;">
+      🎁 경품 교환
+    </button>
+    
     <!-- BGM 버튼 -->
     <button class="sb-btn" onclick="openBgmModal()" 
             style="background:#1a2a3a;color:#7ec8e3;margin-top:.8rem;">
@@ -463,6 +469,70 @@ h1 { font-size: 1.5rem; color: #f0c040; margin-bottom: .25rem; }
   </div>
 </div>
 
+<!-- 경품 교환 모달 -->
+<div class="how-modal-bg" id="prizeModalBg" style="display:none;">
+  <div class="how-modal" style="max-width:700px;">
+    <button class="how-close" onclick="closePrizeModal()">✕</button>
+    <h2 style="color:#f0c040;margin-bottom:1.5rem;text-align:center;">🎁 경품 교환 안내</h2>
+    
+    <div style="margin-bottom:1.5rem;">
+      <h3 style="color:#7ec8e3;font-size:1rem;margin-bottom:.8rem;border-bottom:1px solid #2a4a6a;padding-bottom:.4rem;">
+        🏆 금빛 시티
+      </h3>
+      <table style="width:100%;border-collapse:collapse;font-size:.85rem;color:#ccc;">
+        <tr style="background:#1a2a3a;font-weight:700;color:#f0c040;">
+          <td style="padding:.6rem;border:1px solid #2a4a6a;">항목</td>
+          <td style="padding:.6rem;border:1px solid #2a4a6a;text-align:right;">필요 코인</td>
+        </tr>
+        <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">포켓몬</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">캐이시</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">200</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">아보 (하트골드)</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">700</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">모래두지 (소울실버)</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">700</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">미뇽</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">2,100</td></tr>
+        <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">기술머신 (TM)</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM90 대타출동</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">2,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM75 칼춤</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">4,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM44 잠자기</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">6,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM35 화염방사</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM13 냉동빔</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM24 10만 볼트</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
+        <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">장비 도구</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">실크스카프</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">1,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">광각 렌즈</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">1,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">포커스렌즈</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">1,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">메트로놈</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">1,000</td></tr>
+      </table>
+    </div>
+    
+    <div>
+      <h3 style="color:#7ec8e3;font-size:1rem;margin-bottom:.8rem;border-bottom:1px solid #2a4a6a;padding-bottom:.4rem;">
+        🌈 무지개시티
+      </h3>
+      <table style="width:100%;border-collapse:collapse;font-size:.85rem;color:#ccc;">
+        <tr style="background:#1a2a3a;font-weight:700;color:#f0c040;">
+          <td style="padding:.6rem;border:1px solid #2a4a6a;">항목</td>
+          <td style="padding:.6rem;border:1px solid #2a4a6a;text-align:right;">필요 코인</td>
+        </tr>
+        <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">포켓몬</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">마임맨</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">3,333</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">이브이</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">6,666</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">폴리곤</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">9,999</td></tr>
+        <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">기술머신 (TM)</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM58 버티기</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">2,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM32 그림자분신</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">4,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM10 잠재파워</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">6,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM29 사이코키네시스</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM74 자이로볼</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM68 기가임팩트</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">15,000</td></tr>
+      </table>
+    </div>
+    
+    <p style="margin-top:1.5rem;font-size:.8rem;color:#888;text-align:center;">
+      ※ 포켓몬스터 하트골드·소울실버 게임 내 경품 안내입니다
+    </p>
+  </div>
+</div>
+
 <script>
 // ══════════════════════════════════════════
 // i18n
@@ -494,8 +564,8 @@ const T = {
     continueBtn:(lv) => `▶ 이어하기 (Lv.${lv})`,
     soloClear:  (from, to) => `🏆 클리어! Lv.${from} → Lv.${to}`,
     soloOver:   (p, lv, kept) => kept
-      ? `💥 찌리리공! ${p}칸 열었습니다. Lv.${lv} 유지.`
-      : `💥 찌리리공! ${p}칸 열었으니 Lv.${lv}로 다운됩니다.`,
+      ? `💥 찌찌리공! Lv.${lv} 유지`
+      : `💥 찌찌리공! ${p}칸 열었으니 Lv.${lv}로 다운됩니다.`,
     pracOver:   '💥 찌리리공! 게임 오버. 다시 도전하려면 연습 모드를 다시 선택하세요.',
     pracClear:  '🏆 클리어! 연습 모드를 다시 선택해 계속 도전하세요.',
     howTitle1: '🎯 즐기는 방법',
@@ -508,11 +578,11 @@ const T = {
     howBody4: '"그만두기"를 선택하면 게임에서 빠져나갈 수 있습니다. 지금까지 획득한 동전을 유지하며, 이어하기 버튼으로 해당 레벨을 다시 플레이할 수 있습니다.',
     btnMemoOn:  '✏️ 메모 ON', btnMemoOff: '✏️ 메모 OFF',
     btnQuit:    '🚪 그만두기',
-    coinLabel:  (n) => `💰 누적 코인: ${n}`,
+    coinLabel:  (session, current) => current > 0 ? `💰 누적: ${session} | 현재: ${current}` : `💰 누적 코인: ${session}`,
     quitMsg:    (c) => `🚪 그만뒀습니다. ${c}코인 획득!`,
     soloOver:   (p, lv, kept) => kept
-      ? `💥 찌리리공! ${p}칸 열었습니다. Lv.${lv} 유지.`
-      : `💥 찌리리공! ${p}칸 열었으니 Lv.${lv}로 다운됩니다. 동전을 잃었습니다.`,
+      ? `💥 찌찌리공! Lv.${lv} 유지`
+      : `💥 찌찌리공! ${p}칸 열었으니 Lv.${lv}로 다운됩니다. 동전을 잃었습니다.`,
   },
   en: {
     title:      'Voltorb Flip Calculator',
@@ -537,7 +607,7 @@ const T = {
     continueBtn:(lv) => `▶ Continue (Lv.${lv})`,
     soloClear:  (from, to) => `🏆 Clear! Lv.${from} → Lv.${to}`,
     soloOver:   (p, lv, kept) => kept
-      ? `💥 Voltorb! Opened ${p} panels. Staying at Lv.${lv}.`
+      ? `💥 Voltorb! Staying at Lv.${lv}`
       : `💥 Voltorb! Opened ${p} panels. Down to Lv.${lv}. Coins lost.`,
     pracOver:   '💥 Voltorb! Game Over. Select Practice again to retry.',
     pracClear:  '🏆 Clear! Select Practice again to keep going.',
@@ -551,7 +621,7 @@ const T = {
     howBody4: 'Select "Quit" to leave the game while keeping your earned coins. Use the Continue button to replay the same level.',
     btnMemoOn:  '✏️ Memo ON', btnMemoOff: '✏️ Memo OFF',
     btnQuit:    '🚪 Quit',
-    coinLabel:  (n) => `💰 Total Coins: ${n}`,
+    coinLabel:  (session, current) => current > 0 ? `💰 Total: ${session} | Current: ${current}` : `💰 Total Coins: ${session}`,
     quitMsg:    (c) => `🚪 Quit! Earned ${c} coins.`,
   },
   ja: {
@@ -577,7 +647,7 @@ const T = {
     continueBtn:(lv) => `▶ つづける (Lv.${lv})`,
     soloClear:  (from, to) => `🏆 クリア！Lv.${from} → Lv.${to}`,
     soloOver:   (p, lv, kept) => kept
-      ? `💥 ボルトロブ！${p}マス開けました。Lv.${lv}を維持。`
+      ? `💥 ボルトロブ！Lv.${lv}を維持`
       : `💥 ボルトロブ！${p}マス開けたのでLv.${lv}にダウン。コインを失いました。`,
     pracOver:   '💥 ボルトロブ！ゲームオーバー。練習モードを再選択して再挑戦してください。',
     pracClear:  '🏆 クリア！練習モードを再選択して続けてください。',
@@ -591,7 +661,7 @@ const T = {
     howBody4: '「やめる」を選ぶとゲームから抜けられます。これまで獲得したコインを維持し、つづけるボタンで同じレベルを再プレイできます。',
     btnMemoOn:  '✏️ メモ ON', btnMemoOff: '✏️ メモ OFF',
     btnQuit:    '🚪 やめる',
-    coinLabel:  (n) => `💰 合計コイン: ${n}`,
+    coinLabel:  (session, current) => current > 0 ? `💰 合計: ${session} | 現在: ${current}` : `💰 合計コイン: ${session}`,
     quitMsg:    (c) => `🚪 やめました。${c}コイン獲得！`,
   },
   ru: {
@@ -617,7 +687,7 @@ const T = {
     continueBtn:(lv) => `▶ Продолжить (Ур.${lv})`,
     soloClear:  (from, to) => `🏆 Победа! Ур.${from} → Ур.${to}`,
     soloOver:   (p, lv, kept) => kept
-      ? `💥 Вольторб! Открыто ${p} клеток. Уровень ${lv} сохранён.`
+      ? `💥 Вольторб! Уровень ${lv} сохранён`
       : `💥 Вольторб! Открыто ${p} клеток. Понижение до Ур.${lv}.`,
     pracOver:   '💥 Вольторб! Игра окончена. Выберите практику снова.',
     pracClear:  '🏆 Победа! Выберите практику снова для продолжения.',
@@ -631,7 +701,7 @@ const T = {
     howBody4: 'Выберите «Выйти», чтобы покинуть игру, сохранив заработанные монеты. Используйте кнопку «Продолжить», чтобы переиграть тот же уровень.',
     btnMemoOn:  '✏️ Заметки ВКЛ', btnMemoOff: '✏️ Заметки ВЫКЛ',
     btnQuit:    '🚪 Выйти',
-    coinLabel:  (n) => `💰 Монеты: ${n}`,
+    coinLabel:  (session, current) => current > 0 ? `💰 Всего: ${session} | Сейчас: ${current}` : `💰 Монеты: ${session}`,
     quitMsg:    (c) => `🚪 Вышли! Получено ${c} монет.`,
   }
 };
@@ -1187,7 +1257,13 @@ function calcCoinGain(val) {
 
 function updateCoinDisplay() {
   const el = document.getElementById('coinDisplay');
-  if (el) el.textContent = t().coinLabel(sessionCoins + (gameMode==='solo' ? currentGameCoins : 0));
+  if (el) {
+    if (gameMode === 'solo') {
+      el.textContent = t().coinLabel(sessionCoins, currentGameCoins);
+    } else {
+      el.textContent = t().coinLabel(sessionCoins, 0);
+    }
+  }
 }
 
 // Level specs: [×2, ×3, voltorbs] per level (from table)
@@ -1379,6 +1455,14 @@ function openBgmModal() {
 
 function closeBgmModal() {
   document.getElementById('bgmModalBg').style.display = 'none';
+}
+
+function openPrizeModal() {
+  document.getElementById('prizeModalBg').style.display = 'flex';
+}
+
+function closePrizeModal() {
+  document.getElementById('prizeModalBg').style.display = 'none';
 }
 
 function buildHowContent() {
