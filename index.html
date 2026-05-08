@@ -410,7 +410,7 @@ h1 { font-size: 1.5rem; color: #f0c040; margin-bottom: .25rem; }
     
     <!-- 경품 교환 버튼 -->
     <button class="sb-btn" onclick="openPrizeModal()" 
-            style="background:#3a2a1a;color:#f0c040;">
+            style="background:#3a2a1a;color:#f0c040;" id="btn-prize">
       🎁 경품 교환
     </button>
     
@@ -557,8 +557,7 @@ const T = {
     msgRisky:   (extra) => `⚠️ 확정 가능한 칸이 없어요. 빨간 테두리 = 찌리리공 확률 가장 낮은 추천 칸 (${extra} 경우의 수)`,
     extraMany:  (n) => `${n}개 이상`, extraFew: (n) => `${n}가지`,
     // 모드
-    btnHow:     '📖 플레이 방법', btnCalc: '🧮 계산기 모드', btnPrac: '🎮 연습 모드', btnSolo: '⚔️ 도전 모드',
-    levelPick:  '레벨 선택',
+    btnHow:     '📖 플레이 방법', btnCalc: '🧮 계산기 모드', btnPrac: '🎮 연습 모드', btnSolo: '⚔️ 도전 모드', btnPrize: '🎁 경품 교환',
     badgePrac:  (lv) => `🎮 연습 모드 — Lv.${lv}`,
     badgeSolo:  (lv) => `⚔️ 도전 모드 — Lv.${lv}`,
     continueBtn:(lv) => `▶ 이어하기 (Lv.${lv})`,
@@ -579,6 +578,15 @@ const T = {
     btnMemoOn:  '✏️ 메모 ON', btnMemoOff: '✏️ 메모 OFF',
     btnQuit:    '🚪 그만두기',
     coinLabel:  (session, current) => current > 0 ? `💰 누적: ${session} | 현재: ${current}` : `💰 누적 코인: ${session}`,
+    prizeTitle: '🎁 경품 교환 안내',
+    prizeCity1: '🏆 금빛 시티',
+    prizeCity2: '🌈 무지개시티',
+    prizeItem: '항목',
+    prizeCoins: '필요 코인',
+    prizePokemon: '포켓몬',
+    prizeTM: '기술머신 (TM)',
+    prizeItems: '장비 도구',
+    prizeNote: '※ 포켓몬스터 하트골드·소울실버 게임 내 경품 안내입니다',
     quitMsg:    (c) => `🚪 그만뒀습니다. ${c}코인 획득!`,
     soloOver:   (p, lv, kept) => kept
       ? `💥 찌찌리공! Lv.${lv} 유지`
@@ -600,7 +608,7 @@ const T = {
     msgNoSol:   '⚠️ No valid solution found. Please check the hints.',
     msgRisky:   (extra) => `⚠️ No cells can be confirmed. Red border = safest recommended cell (${extra})`,
     extraMany:  (n) => `${n}+ solutions`, extraFew: (n) => `${n} solution${n>1?'s':''}`,
-    btnHow:     '📖 How to Play', btnCalc: '🧮 Calculator', btnPrac: '🎮 Practice', btnSolo: '⚔️ Challenge',
+    btnHow:     '📖 Play Guide', btnCalc: '🧮 Calculator', btnPrac: '🎮 Practice', btnSolo: '⚔️ Challenge', btnPrize: '🎁 Prize Exchange',
     levelPick:  'Select Level',
     badgePrac:  (lv) => `🎮 Practice — Lv.${lv}`,
     badgeSolo:  (lv) => `⚔️ Challenge — Lv.${lv}`,
@@ -622,6 +630,15 @@ const T = {
     btnMemoOn:  '✏️ Memo ON', btnMemoOff: '✏️ Memo OFF',
     btnQuit:    '🚪 Quit',
     coinLabel:  (session, current) => current > 0 ? `💰 Total: ${session} | Current: ${current}` : `💰 Total Coins: ${session}`,
+    prizeTitle: '🎁 Prize Exchange Guide',
+    prizeCity1: '🏆 Goldenrod City',
+    prizeCity2: '🌈 Celadon City',
+    prizeItem: 'Item',
+    prizeCoins: 'Coins Required',
+    prizePokemon: 'Pokémon',
+    prizeTM: 'Technical Machines (TM)',
+    prizeItems: 'Held Items',
+    prizeNote: '※ Prize information from Pokémon HeartGold & SoulSilver',
     quitMsg:    (c) => `🚪 Quit! Earned ${c} coins.`,
   },
   ja: {
@@ -640,7 +657,7 @@ const T = {
     msgNoSol:   '⚠️ 有効な解がありません。ヒントを確認してください。',
     msgRisky:   (extra) => `⚠️ 確定できるマスがありません。赤い枠 = ボルトロブ確率が最も低い推奨マス（${extra}）`,
     extraMany:  (n) => `${n}通り以上`, extraFew: (n) => `${n}通り`,
-    btnHow:     '📖 遊び方', btnCalc: '🧮 計算機モード', btnPrac: '🎮 練習モード', btnSolo: '⚔️ チャレンジ',
+    btnHow:     '📖 遊び方', btnCalc: '🧮 計算機', btnPrac: '🎮 練習', btnSolo: '⚔️ チャレンジ', btnPrize: '🎁 景品交換',
     levelPick:  'レベル選択',
     badgePrac:  (lv) => `🎮 練習モード — Lv.${lv}`,
     badgeSolo:  (lv) => `⚔️ チャレンジ — Lv.${lv}`,
@@ -662,6 +679,15 @@ const T = {
     btnMemoOn:  '✏️ メモ ON', btnMemoOff: '✏️ メモ OFF',
     btnQuit:    '🚪 やめる',
     coinLabel:  (session, current) => current > 0 ? `💰 合計: ${session} | 現在: ${current}` : `💰 合計コイン: ${session}`,
+    prizeTitle: '🎁 景品交換ガイド',
+    prizeCity1: '🏆 コガネシティ',
+    prizeCity2: '🌈 タマムシシティ',
+    prizeItem: 'アイテム',
+    prizeCoins: '必要コイン',
+    prizePokemon: 'ポケモン',
+    prizeTM: 'わざマシン (TM)',
+    prizeItems: '持ち物',
+    prizeNote: '※ ポケットモンスター ハートゴールド・ソウルシルバーのゲーム内景品情報です',
     quitMsg:    (c) => `🚪 やめました。${c}コイン獲得！`,
   },
   ru: {
@@ -680,8 +706,7 @@ const T = {
     msgNoSol:   '⚠️ Нет допустимых решений. Проверьте подсказки.',
     msgRisky:   (extra) => `⚠️ Нет клеток для подтверждения. Красная рамка = самая безопасная клетка (${extra})`,
     extraMany:  (n) => `${n}+ решений`, extraFew: (n) => `${n} решение(й)`,
-    btnHow:     '📖 Как играть', btnCalc: '🧮 Калькулятор', btnPrac: '🎮 Практика', btnSolo: '⚔️ Испытание',
-    levelPick:  'Выбор уровня',
+    btnHow:     '📖 Гайд', btnCalc: '🧮 Калькулятор', btnPrac: '🎮 Практика', btnSolo: '⚔️ Вызов', btnPrize: '🎁 Обмен призов',
     badgePrac:  (lv) => `🎮 Практика — Ур.${lv}`,
     badgeSolo:  (lv) => `⚔️ Испытание — Ур.${lv}`,
     continueBtn:(lv) => `▶ Продолжить (Ур.${lv})`,
@@ -702,6 +727,15 @@ const T = {
     btnMemoOn:  '✏️ Заметки ВКЛ', btnMemoOff: '✏️ Заметки ВЫКЛ',
     btnQuit:    '🚪 Выйти',
     coinLabel:  (session, current) => current > 0 ? `💰 Всего: ${session} | Сейчас: ${current}` : `💰 Монеты: ${session}`,
+    prizeTitle: '🎁 Гид по обмену призов',
+    prizeCity1: '🏆 Голденрод Сити',
+    prizeCity2: '🌈 Селадон Сити',
+    prizeItem: 'Предмет',
+    prizeCoins: 'Требуется монет',
+    prizePokemon: 'Покемоны',
+    prizeTM: 'Технические машины (TM)',
+    prizeItems: 'Предметы',
+    prizeNote: '※ Информация о призах из Pokémon HeartGold & SoulSilver',
     quitMsg:    (c) => `🚪 Вышли! Получено ${c} монет.`,
   }
 };
@@ -731,10 +765,11 @@ function applyLang() {
   if (elSolve) elSolve.textContent = T.solve;
   if (elReset) elReset.textContent = T.reset;
 
-  document.getElementById('btn-how').textContent  = T.btnHow;
+  document.getElementById('btn-how').textContent = T.btnHow;
   document.getElementById('btn-calc').textContent = T.btnCalc;
   document.getElementById('btn-prac').textContent = T.btnPrac;
   document.getElementById('btn-solo').textContent = T.btnSolo;
+  document.getElementById('btn-prize').textContent = T.btnPrize;
 
   const lp = document.getElementById('levelPickerLabel');
   if (lp) lp.textContent = T.levelPick;
@@ -1458,11 +1493,77 @@ function closeBgmModal() {
 }
 
 function openPrizeModal() {
+  buildPrizeContent();
   document.getElementById('prizeModalBg').style.display = 'flex';
 }
 
 function closePrizeModal() {
   document.getElementById('prizeModalBg').style.display = 'none';
+}
+
+function buildPrizeContent() {
+  const T = t();
+  const modal = document.querySelector('#prizeModalBg .how-modal');
+  modal.innerHTML = `
+    <button class="how-close" onclick="closePrizeModal()">✕</button>
+    <h2 style="color:#f0c040;margin-bottom:1.5rem;text-align:center;">${T.prizeTitle}</h2>
+    
+    <div style="margin-bottom:1.5rem;">
+      <h3 style="color:#7ec8e3;font-size:1rem;margin-bottom:.8rem;border-bottom:1px solid #2a4a6a;padding-bottom:.4rem;">
+        ${T.prizeCity1}
+      </h3>
+      <table style="width:100%;border-collapse:collapse;font-size:.85rem;color:#ccc;">
+        <tr style="background:#1a2a3a;font-weight:700;color:#f0c040;">
+          <td style="padding:.6rem;border:1px solid #2a4a6a;">${T.prizeItem}</td>
+          <td style="padding:.6rem;border:1px solid #2a4a6a;text-align:right;">${T.prizeCoins}</td>
+        </tr>
+        <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">${T.prizePokemon}</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'캐이시':lang==='ja'?'ケーシィ':lang==='ru'?'Абра':'Abra'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">200</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'아보 (하트골드)':lang==='ja'?'アーボ (ハートゴールド)':lang==='ru'?'Эканс (HeartGold)':'Ekans (HeartGold)'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">700</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'모래두지 (소울실버)':lang==='ja'?'サンド (ソウルシルバー)':lang==='ru'?'Сэндшрю (SoulSilver)':'Sandshrew (SoulSilver)'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">700</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'미뇽':lang==='ja'?'ミニリュウ':lang==='ru'?'Дратини':'Dratini'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">2,100</td></tr>
+        <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">${T.prizeTM}</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM90 ${lang==='ko'?'대타출동':lang==='ja'?'みがわり':lang==='ru'?'Замена':'Substitute'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">2,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM75 ${lang==='ko'?'칼춤':lang==='ja'?'つるぎのまい':lang==='ru'?'Танец мечей':'Swords Dance'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">4,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM44 ${lang==='ko'?'잠자기':lang==='ja'?'ねむる':lang==='ru'?'Отдых':'Rest'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">6,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM35 ${lang==='ko'?'화염방사':lang==='ja'?'かえんほうしゃ':lang==='ru'?'Огнемёт':'Flamethrower'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM13 ${lang==='ko'?'냉동빔':lang==='ja'?'れいとうビーム':lang==='ru'?'Ледяной луч':'Ice Beam'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM24 ${lang==='ko'?'10만 볼트':lang==='ja'?'10まんボルト':lang==='ru'?'Гром':'Thunderbolt'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
+        <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">${T.prizeItems}</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'실크스카프':lang==='ja'?'シルクのスカーフ':lang==='ru'?'Шёлковый шарф':'Silk Scarf'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">1,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'광각 렌즈':lang==='ja'?'こうかくレンズ':lang==='ru'?'Широкоугольная линза':'Wide Lens'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">1,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'포커스렌즈':lang==='ja'?'フォーカスレンズ':lang==='ru'?'Фокусирующая линза':'Zoom Lens'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">1,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'메트로놈':lang==='ja'?'メトロノーム':lang==='ru'?'Метроном':'Metronome'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">1,000</td></tr>
+      </table>
+    </div>
+    
+    <div>
+      <h3 style="color:#7ec8e3;font-size:1rem;margin-bottom:.8rem;border-bottom:1px solid #2a4a6a;padding-bottom:.4rem;">
+        ${T.prizeCity2}
+      </h3>
+      <table style="width:100%;border-collapse:collapse;font-size:.85rem;color:#ccc;">
+        <tr style="background:#1a2a3a;font-weight:700;color:#f0c040;">
+          <td style="padding:.6rem;border:1px solid #2a4a6a;">${T.prizeItem}</td>
+          <td style="padding:.6rem;border:1px solid #2a4a6a;text-align:right;">${T.prizeCoins}</td>
+        </tr>
+        <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">${T.prizePokemon}</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'마임맨':lang==='ja'?'バリヤード':lang==='ru'?'Мистер Майм':'Mr. Mime'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">3,333</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'이브이':lang==='ja'?'イーブイ':lang==='ru'?'Иви':'Eevee'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">6,666</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'폴리곤':lang==='ja'?'ポリゴン':lang==='ru'?'Поригон':'Porygon'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">9,999</td></tr>
+        <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">${T.prizeTM}</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM58 ${lang==='ko'?'버티기':lang==='ja'?'こらえる':lang==='ru'?'Терпение':'Endure'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">2,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM32 ${lang==='ko'?'그림자분신':lang==='ja'?'かげぶんしん':lang==='ru'?'Двойник':'Double Team'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">4,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM10 ${lang==='ko'?'잠재파워':lang==='ja'?'めざめるパワー':lang==='ru'?'Скрытая сила':'Hidden Power'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">6,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM29 ${lang==='ko'?'사이코키네시스':lang==='ja'?'サイコキネシス':lang==='ru'?'Психокинез':'Psychic'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM74 ${lang==='ko'?'자이로볼':lang==='ja'?'ジャイロボール':lang==='ru'?'Гироскоп':'Gyro Ball'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM68 ${lang==='ko'?'기가임팩트':lang==='ja'?'ギガインパクト':lang==='ru'?'Гига-удар':'Giga Impact'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">15,000</td></tr>
+      </table>
+    </div>
+    
+    <p style="margin-top:1.5rem;font-size:.8rem;color:#888;text-align:center;">
+      ${T.prizeNote}
+    </p>
+  `;
 }
 
 function buildHowContent() {
