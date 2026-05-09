@@ -408,10 +408,16 @@ h1 { font-size: 1.5rem; color: #f0c040; margin-bottom: .25rem; }
     
     <button class="sb-btn sb-solo" onclick="startMode('solo')"     id="btn-solo">⚔️ 도전 모드</button>
     
-    <!-- 경품 교환 버튼 -->
+   <!-- 경품 교환 버튼 -->
     <button class="sb-btn" onclick="openPrizeModal()" 
             style="background:#3a2a1a;color:#f0c040;" id="btn-prize">
       🎁 경품 교환
+    </button>
+    
+    <!-- Special Thanks 버튼 -->
+    <button class="sb-btn" onclick="openThanksModal()" 
+            style="background:#2a1a3a;color:#e1a0ff;" id="btn-thanks">
+      💝 도움을 주신 분들
     </button>
     
     <!-- BGM 버튼 -->
@@ -481,26 +487,26 @@ h1 { font-size: 1.5rem; color: #f0c040; margin-bottom: .25rem; }
       </h3>
       <table style="width:100%;border-collapse:collapse;font-size:.85rem;color:#ccc;">
         <tr style="background:#1a2a3a;font-weight:700;color:#f0c040;">
-          <td style="padding:.6rem;border:1px solid #2a4a6a;">항목</td>
-          <td style="padding:.6rem;border:1px solid #2a4a6a;text-align:right;">필요 코인</td>
+          <td style="padding:.6rem;border:2px solid #4a6a8a;">항목</td>
+          <td style="padding:.6rem;border:2px solid #4a6a8a;text-align:right;">필요 코인</td>
         </tr>
         <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">포켓몬</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">캐이시</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">200</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">아보 (하트골드)</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">700</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">모래두지 (소울실버)</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">700</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">미뇽</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">2,100</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">캐이시</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">200</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">아보 (하트골드)</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">700</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">모래두지 (소울실버)</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">700</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">미뇽</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">2,100</td></tr>
         <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">기술머신 (TM)</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM90 대타출동</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">2,000</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM75 칼춤</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">4,000</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM44 잠자기</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">6,000</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM35 화염방사</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM13 냉동빔</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM24 10만 볼트</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM90 대타출동</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">2,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM75 칼춤</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">4,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM44 잠자기</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">6,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM35 화염방사</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">10,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM13 냉동빔</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">10,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM24 10만 볼트</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">10,000</td></tr>
         <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">장비 도구</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">실크스카프</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">1,000</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">광각 렌즈</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">1,000</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">포커스렌즈</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">1,000</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">메트로놈</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">1,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">실크스카프</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">1,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">광각 렌즈</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">1,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">포커스렌즈</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">1,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">메트로놈</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">1,000</td></tr>
       </table>
     </div>
     
@@ -510,26 +516,38 @@ h1 { font-size: 1.5rem; color: #f0c040; margin-bottom: .25rem; }
       </h3>
       <table style="width:100%;border-collapse:collapse;font-size:.85rem;color:#ccc;">
         <tr style="background:#1a2a3a;font-weight:700;color:#f0c040;">
-          <td style="padding:.6rem;border:1px solid #2a4a6a;">항목</td>
-          <td style="padding:.6rem;border:1px solid #2a4a6a;text-align:right;">필요 코인</td>
+          <td style="padding:.6rem;border:2px solid #4a6a8a;">항목</td>
+          <td style="padding:.6rem;border:2px solid #4a6a8a;text-align:right;">필요 코인</td>
         </tr>
         <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">포켓몬</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">마임맨</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">3,333</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">이브이</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">6,666</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">폴리곤</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">9,999</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">마임맨</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">3,333</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">이브이</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">6,666</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">폴리곤</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">9,999</td></tr>
         <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">기술머신 (TM)</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM58 버티기</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">2,000</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM32 그림자분신</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">4,000</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM10 잠재파워</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">6,000</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM29 사이코키네시스</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM74 자이로볼</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM68 기가임팩트</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">15,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM58 버티기</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">2,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM32 그림자분신</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">4,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM10 잠재파워</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">6,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM29 사이코키네시스</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">10,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM74 자이로볼</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">10,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM68 기가임팩트</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">15,000</td></tr>
       </table>
     </div>
     
     <p style="margin-top:1.5rem;font-size:.8rem;color:#888;text-align:center;">
       ※ 포켓몬스터 하트골드·소울실버 게임 내 경품 안내입니다
     </p>
+  </div>
+</div>
+
+<!-- Special Thanks 모달 -->
+<div class="how-modal-bg" id="thanksModalBg" style="display:none;">
+  <div class="how-modal" style="max-width:600px;">
+    <button class="how-close" onclick="closeThanksModal()">✕</button>
+    <h2 style="color:#f0c040;margin-bottom:1.5rem;text-align:center;" id="thanksTitle">💝 도움을 주신 분들</h2>
+    <div id="thanksContent" style="text-align:center;color:#ccc;font-size:.9rem;line-height:1.8;">
+      <!-- 내용은 나중에 추가 -->
+      <p>준비 중입니다...</p>
+    </div>
   </div>
 </div>
 
@@ -557,7 +575,7 @@ const T = {
     msgRisky:   (extra) => `⚠️ 확정 가능한 칸이 없어요. 빨간 테두리 = 찌리리공 확률 가장 낮은 추천 칸 (${extra} 경우의 수)`,
     extraMany:  (n) => `${n}개 이상`, extraFew: (n) => `${n}가지`,
     // 모드
-    btnHow:     '📖 플레이 방법', btnCalc: '🧮 계산기 모드', btnPrac: '🎮 연습 모드', btnSolo: '⚔️ 도전 모드', btnPrize: '🎁 경품 교환',
+    btnHow:     '📖 플레이 방법', btnCalc: '🧮 계산기 모드', btnPrac: '🎮 연습 모드', btnSolo: '⚔️ 도전 모드', btnPrize: '🎁 경품 교환', btnThanks: '💝 도움을 주신 분들',
     badgePrac:  (lv) => `🎮 연습 모드 — Lv.${lv}`,
     badgeSolo:  (lv) => `⚔️ 도전 모드 — Lv.${lv}`,
     continueBtn:(lv) => `▶ 이어하기 (Lv.${lv})`,
@@ -608,8 +626,7 @@ const T = {
     msgNoSol:   '⚠️ No valid solution found. Please check the hints.',
     msgRisky:   (extra) => `⚠️ No cells can be confirmed. Red border = safest recommended cell (${extra})`,
     extraMany:  (n) => `${n}+ solutions`, extraFew: (n) => `${n} solution${n>1?'s':''}`,
-    btnHow:     '📖 Play Guide', btnCalc: '🧮 Calculator', btnPrac: '🎮 Practice', btnSolo: '⚔️ Challenge', btnPrize: '🎁 Prize Exchange',
-    levelPick:  'Select Level',
+    btnHow:     '📖 Play Guide', btnCalc: '🧮 Calculator', btnPrac: '🎮 Practice', btnSolo: '⚔️ Challenge', btnPrize: '🎁 Prize Exchange', btnThanks: '💝 SPECIAL THANKS',
     badgePrac:  (lv) => `🎮 Practice — Lv.${lv}`,
     badgeSolo:  (lv) => `⚔️ Challenge — Lv.${lv}`,
     continueBtn:(lv) => `▶ Continue (Lv.${lv})`,
@@ -657,7 +674,7 @@ const T = {
     msgNoSol:   '⚠️ 有効な解がありません。ヒントを確認してください。',
     msgRisky:   (extra) => `⚠️ 確定できるマスがありません。赤い枠 = ボルトロブ確率が最も低い推奨マス（${extra}）`,
     extraMany:  (n) => `${n}通り以上`, extraFew: (n) => `${n}通り`,
-    btnHow:     '📖 遊び方', btnCalc: '🧮 計算機', btnPrac: '🎮 練習', btnSolo: '⚔️ チャレンジ', btnPrize: '🎁 景品交換',
+    btnHow:     '📖 遊び方', btnCalc: '🧮 計算機', btnPrac: '🎮 練習', btnSolo: '⚔️ チャレンジ', btnPrize: '🎁 景品交換', btnThanks: '💝 スペシャルサンクス',
     levelPick:  'レベル選択',
     badgePrac:  (lv) => `🎮 練習モード — Lv.${lv}`,
     badgeSolo:  (lv) => `⚔️ チャレンジ — Lv.${lv}`,
@@ -706,7 +723,7 @@ const T = {
     msgNoSol:   '⚠️ Нет допустимых решений. Проверьте подсказки.',
     msgRisky:   (extra) => `⚠️ Нет клеток для подтверждения. Красная рамка = самая безопасная клетка (${extra})`,
     extraMany:  (n) => `${n}+ решений`, extraFew: (n) => `${n} решение(й)`,
-    btnHow:     '📖 Гайд', btnCalc: '🧮 Калькулятор', btnPrac: '🎮 Практика', btnSolo: '⚔️ Вызов', btnPrize: '🎁 Обмен призов',
+    btnHow:     '📖 Гайд', btnCalc: '🧮 Калькулятор', btnPrac: '🎮 Практика', btnSolo: '⚔️ Вызов', btnPrize: '🎁 Обмен призов', btnThanks: '💝 Благодарности',
     badgePrac:  (lv) => `🎮 Практика — Ур.${lv}`,
     badgeSolo:  (lv) => `⚔️ Испытание — Ур.${lv}`,
     continueBtn:(lv) => `▶ Продолжить (Ур.${lv})`,
@@ -770,6 +787,7 @@ function applyLang() {
   document.getElementById('btn-prac').textContent = T.btnPrac;
   document.getElementById('btn-solo').textContent = T.btnSolo;
   document.getElementById('btn-prize').textContent = T.btnPrize;
+  document.getElementById('btn-thanks').textContent = T.btnThanks;
 
   const lp = document.getElementById('levelPickerLabel');
   if (lp) lp.textContent = T.levelPick;
@@ -1501,6 +1519,21 @@ function closePrizeModal() {
   document.getElementById('prizeModalBg').style.display = 'none';
 }
 
+function openThanksModal() {
+  buildThanksContent();
+  document.getElementById('thanksModalBg').style.display = 'flex';
+}
+
+function closeThanksModal() {
+  document.getElementById('thanksModalBg').style.display = 'none';
+}
+
+function buildThanksContent() {
+  const T = t();
+  document.getElementById('thanksTitle').textContent = T.btnThanks;
+  // 내용은 나중에 추가
+}
+
 function buildPrizeContent() {
   const T = t();
   const modal = document.querySelector('#prizeModalBg .how-modal');
@@ -1514,26 +1547,26 @@ function buildPrizeContent() {
       </h3>
       <table style="width:100%;border-collapse:collapse;font-size:.85rem;color:#ccc;">
         <tr style="background:#1a2a3a;font-weight:700;color:#f0c040;">
-          <td style="padding:.6rem;border:1px solid #2a4a6a;">${T.prizeItem}</td>
-          <td style="padding:.6rem;border:1px solid #2a4a6a;text-align:right;">${T.prizeCoins}</td>
+          <td style="padding:.6rem;border:2px solid #4a6a8a;">${T.prizeItem}</td>
+          <td style="padding:.6rem;border:2px solid #4a6a8a;text-align:right;">${T.prizeCoins}</td>
         </tr>
         <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">${T.prizePokemon}</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'캐이시':lang==='ja'?'ケーシィ':lang==='ru'?'Абра':'Abra'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">200</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'아보 (하트골드)':lang==='ja'?'アーボ (ハートゴールド)':lang==='ru'?'Эканс (HeartGold)':'Ekans (HeartGold)'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">700</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'모래두지 (소울실버)':lang==='ja'?'サンド (ソウルシルバー)':lang==='ru'?'Сэндшрю (SoulSilver)':'Sandshrew (SoulSilver)'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">700</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'미뇽':lang==='ja'?'ミニリュウ':lang==='ru'?'Дратини':'Dratini'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">2,100</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">${lang==='ko'?'캐이시':lang==='ja'?'ケーシィ':lang==='ru'?'Абра':'Abra'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">200</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">${lang==='ko'?'아보 (하트골드)':lang==='ja'?'アーボ (ハートゴールド)':lang==='ru'?'Эканс (HeartGold)':'Ekans (HeartGold)'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">700</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">${lang==='ko'?'모래두지 (소울실버)':lang==='ja'?'サンド (ソウルシルバー)':lang==='ru'?'Сэндшрю (SoulSilver)':'Sandshrew (SoulSilver)'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">700</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">${lang==='ko'?'미뇽':lang==='ja'?'ミニリュウ':lang==='ru'?'Дратини':'Dratini'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">2,100</td></tr>
         <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">${T.prizeTM}</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM90 ${lang==='ko'?'대타출동':lang==='ja'?'みがわり':lang==='ru'?'Замена':'Substitute'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">2,000</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM75 ${lang==='ko'?'칼춤':lang==='ja'?'つるぎのまい':lang==='ru'?'Танец мечей':'Swords Dance'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">4,000</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM44 ${lang==='ko'?'잠자기':lang==='ja'?'ねむる':lang==='ru'?'Отдых':'Rest'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">6,000</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM35 ${lang==='ko'?'화염방사':lang==='ja'?'かえんほうしゃ':lang==='ru'?'Огнемёт':'Flamethrower'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM13 ${lang==='ko'?'냉동빔':lang==='ja'?'れいとうビーム':lang==='ru'?'Ледяной луч':'Ice Beam'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM24 ${lang==='ko'?'10만 볼트':lang==='ja'?'10まんボルト':lang==='ru'?'Гром':'Thunderbolt'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM90 ${lang==='ko'?'대타출동':lang==='ja'?'みがわり':lang==='ru'?'Замена':'Substitute'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">2,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM75 ${lang==='ko'?'칼춤':lang==='ja'?'つるぎのまい':lang==='ru'?'Танец мечей':'Swords Dance'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">4,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM44 ${lang==='ko'?'잠자기':lang==='ja'?'ねむる':lang==='ru'?'Отдых':'Rest'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">6,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM35 ${lang==='ko'?'화염방사':lang==='ja'?'かえんほうしゃ':lang==='ru'?'Огнемёт':'Flamethrower'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">10,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM13 ${lang==='ko'?'냉동빔':lang==='ja'?'れいとうビーム':lang==='ru'?'Ледяной луч':'Ice Beam'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">10,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM24 ${lang==='ko'?'10만 볼트':lang==='ja'?'10まんボルト':lang==='ru'?'Гром':'Thunderbolt'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">10,000</td></tr>
         <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">${T.prizeItems}</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'실크스카프':lang==='ja'?'シルクのスカーフ':lang==='ru'?'Шёлковый шарф':'Silk Scarf'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">1,000</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'광각 렌즈':lang==='ja'?'こうかくレンズ':lang==='ru'?'Широкоугольная линза':'Wide Lens'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">1,000</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'포커스렌즈':lang==='ja'?'フォーカスレンズ':lang==='ru'?'Фокусирующая линза':'Zoom Lens'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">1,000</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'메트로놈':lang==='ja'?'メトロノーム':lang==='ru'?'Метроном':'Metronome'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">1,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">${lang==='ko'?'실크스카프':lang==='ja'?'シルクのスカーフ':lang==='ru'?'Шёлковый шарф':'Silk Scarf'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">1,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">${lang==='ko'?'광각 렌즈':lang==='ja'?'こうかくレンズ':lang==='ru'?'Широкоугольная линза':'Wide Lens'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">1,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">${lang==='ko'?'포커스렌즈':lang==='ja'?'フォーカスレンズ':lang==='ru'?'Фокусирующая линза':'Zoom Lens'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">1,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">${lang==='ko'?'메트로놈':lang==='ja'?'メトロノーム':lang==='ru'?'Метроном':'Metronome'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">1,000</td></tr>
       </table>
     </div>
     
@@ -1543,20 +1576,20 @@ function buildPrizeContent() {
       </h3>
       <table style="width:100%;border-collapse:collapse;font-size:.85rem;color:#ccc;">
         <tr style="background:#1a2a3a;font-weight:700;color:#f0c040;">
-          <td style="padding:.6rem;border:1px solid #2a4a6a;">${T.prizeItem}</td>
-          <td style="padding:.6rem;border:1px solid #2a4a6a;text-align:right;">${T.prizeCoins}</td>
+          <td style="padding:.6rem;border:2px solid #4a6a8a;">${T.prizeItem}</td>
+          <td style="padding:.6rem;border:2px solid #4a6a8a;text-align:right;">${T.prizeCoins}</td>
         </tr>
         <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">${T.prizePokemon}</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'마임맨':lang==='ja'?'バリヤード':lang==='ru'?'Мистер Майм':'Mr. Mime'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">3,333</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'이브이':lang==='ja'?'イーブイ':lang==='ru'?'Иви':'Eevee'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">6,666</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">${lang==='ko'?'폴리곤':lang==='ja'?'ポリゴン':lang==='ru'?'Поригон':'Porygon'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">9,999</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">${lang==='ko'?'마임맨':lang==='ja'?'バリヤード':lang==='ru'?'Мистер Майм':'Mr. Mime'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">3,333</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">${lang==='ko'?'이브이':lang==='ja'?'イーブイ':lang==='ru'?'Иви':'Eevee'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">6,666</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">${lang==='ko'?'폴리곤':lang==='ja'?'ポリゴン':lang==='ru'?'Поригон':'Porygon'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">9,999</td></tr>
         <tr><td colspan="2" style="padding:.4rem .6rem;background:#252545;font-weight:700;color:#7ec8e3;">${T.prizeTM}</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM58 ${lang==='ko'?'버티기':lang==='ja'?'こらえる':lang==='ru'?'Терпение':'Endure'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">2,000</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM32 ${lang==='ko'?'그림자분신':lang==='ja'?'かげぶんしん':lang==='ru'?'Двойник':'Double Team'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">4,000</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM10 ${lang==='ko'?'잠재파워':lang==='ja'?'めざめるパワー':lang==='ru'?'Скрытая сила':'Hidden Power'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">6,000</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM29 ${lang==='ko'?'사이코키네시스':lang==='ja'?'サイコキネシス':lang==='ru'?'Психокинез':'Psychic'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
-        <tr><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM74 ${lang==='ko'?'자이로볼':lang==='ja'?'ジャイロボール':lang==='ru'?'Гироскоп':'Gyro Ball'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">10,000</td></tr>
-        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;">TM68 ${lang==='ko'?'기가임팩트':lang==='ja'?'ギガインパクト':lang==='ru'?'Гига-удар':'Giga Impact'}</td><td style="padding:.5rem .6rem;border:1px solid #2a4a6a;text-align:right;">15,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM58 ${lang==='ko'?'버티기':lang==='ja'?'こらえる':lang==='ru'?'Терпение':'Endure'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">2,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM32 ${lang==='ko'?'그림자분신':lang==='ja'?'かげぶんしん':lang==='ru'?'Двойник':'Double Team'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">4,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM10 ${lang==='ko'?'잠재파워':lang==='ja'?'めざめるパワー':lang==='ru'?'Скрытая сила':'Hidden Power'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">6,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM29 ${lang==='ko'?'사이코키네시스':lang==='ja'?'サイコキネシス':lang==='ru'?'Психокинез':'Psychic'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">10,000</td></tr>
+        <tr><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM74 ${lang==='ko'?'자이로볼':lang==='ja'?'ジャイロボール':lang==='ru'?'Гироскоп':'Gyro Ball'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">10,000</td></tr>
+        <tr style="background:#1a1a2e;"><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;">TM68 ${lang==='ko'?'기가임팩트':lang==='ja'?'ギガインパクト':lang==='ru'?'Гига-удар':'Giga Impact'}</td><td style="padding:.5rem .6rem;border:2px solid #4a6a8a;text-align:right;">15,000</td></tr>
       </table>
     </div>
     
